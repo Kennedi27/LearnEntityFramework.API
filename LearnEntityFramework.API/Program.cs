@@ -1,4 +1,11 @@
+using LearnEntityFramework.API.Configurations;
+
 var builder = WebApplication.CreateBuilder(args);
+
+
+builder.Services
+    .InstallServices(
+    builder.Configuration, typeof(IServiceInstaller).Assembly);
 
 // Add services to the container.
 
