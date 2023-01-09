@@ -5,7 +5,7 @@ VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LearnEntityFramework.API", "LearnEntityFramework.API\LearnEntityFramework.API.csproj", "{E5FF5F58-A377-46EC-9966-12F1A27BE303}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LearnEntityFramework.Core", "LearnEntityFramework.Core\LearnEntityFramework.Core.csproj", "{27ADC8C0-2707-4195-87C7-B1BDABF2BBC1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LearnEntityFramework.EFLibrary", "LearnEntityFramework.EFLibrary\LearnEntityFramework.EFLibrary.csproj", "{DCEF6D71-984A-4631-85D9-0129D8C938EB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{E5FF5F58-A377-46EC-9966-12F1A27BE303}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E5FF5F58-A377-46EC-9966-12F1A27BE303}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E5FF5F58-A377-46EC-9966-12F1A27BE303}.Release|Any CPU.Build.0 = Release|Any CPU
-		{27ADC8C0-2707-4195-87C7-B1BDABF2BBC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{27ADC8C0-2707-4195-87C7-B1BDABF2BBC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{27ADC8C0-2707-4195-87C7-B1BDABF2BBC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{27ADC8C0-2707-4195-87C7-B1BDABF2BBC1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCEF6D71-984A-4631-85D9-0129D8C938EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCEF6D71-984A-4631-85D9-0129D8C938EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCEF6D71-984A-4631-85D9-0129D8C938EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCEF6D71-984A-4631-85D9-0129D8C938EB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
