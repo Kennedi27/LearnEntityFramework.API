@@ -12,20 +12,6 @@ namespace LearnEntityFramework.EFLibrary.Configurations
 
             builder.HasKey(customer => customer.Id);
 
-            builder.Property(customer => customer.Id)
-                   .IsRequired()
-                   .HasColumnName("id");
-
-            builder.Property(customer => customer.FirstName)
-                   .IsRequired()
-                   .HasColumnType("varchar")
-                   .HasColumnName("first_name");
-
-            builder.Property(customer => customer.LastName)
-                   .HasColumnType("varchar(50)")
-                   .HasMaxLength(50)
-                   .IsFixedLength()
-                   .HasColumnName("last_name");
 
 
         }

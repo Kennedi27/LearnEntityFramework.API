@@ -11,5 +11,6 @@ namespace LearnEntityFramework.EFLibrary.Data
         }
 
         public DbSet<CustomerEntity> Customers { get; set; }
+        public DbSet<ProductUnitEntity> ProductUnit { get; set; }
     }
 }
