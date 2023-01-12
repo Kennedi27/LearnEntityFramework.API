@@ -25,7 +25,7 @@ namespace LearnEntityFramework.EFLibrary.Entities
         
         [Required, MaxLength(50)] 
         public string Email { get; set; } = String.Empty;
-        public bool? Deleted { get; set; }
+        public bool Deleted { get; set; }
         public DateTime? DeleteTimeUtc { get; set; }
 
         public string CreatedBy { get; set; } = string.Empty;

@@ -23,7 +23,7 @@ namespace LearnEntityFramework.EFLibrary.Entities
 
         public int UserId { get; set; }
 
-        public bool? Deleted { get; set; }
+        public bool Deleted { get; set; }
         public DateTime? DeleteTimeUtc { get; set; }
         public string CreatedBy { get; set; } = string.Empty;
         public DateTime CreatedOnUtc { get; set; }

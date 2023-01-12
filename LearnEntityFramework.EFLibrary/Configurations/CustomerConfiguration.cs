@@ -13,6 +13,11 @@ namespace LearnEntityFramework.EFLibrary.Configurations
             builder.HasKey(customer => customer.Id);
 
 
+            builder.Property(customer => customer.Deleted).HasDefaultValue(false);
+
+
+
+            builder.HasQueryFilter(customer => !customer.Deleted);
 
         }
     }

@@ -8,7 +8,7 @@ namespace LearnEntityFramework.EFLibrary.Abstractions
 {
     internal interface ISoftDeleteEntity
     {
-        bool? Deleted { get; set; }
+        bool Deleted { get; set; }
         DateTime? DeleteTimeUtc { get; set; }
     }
 }

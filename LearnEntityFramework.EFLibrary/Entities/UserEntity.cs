@@ -19,7 +19,7 @@ namespace LearnEntityFramework.EFLibrary.Entities
         [Required, MaxLength(20)]
         public string LastName { get; set; } = String.Empty;
 
-        public bool? Deleted { get;  set; }
+        public bool Deleted { get;  set; }
         
         public DateTime? DeleteTimeUtc { get; set; }
         
