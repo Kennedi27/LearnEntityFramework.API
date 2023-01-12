@@ -9,8 +9,6 @@ namespace LearnEntityFramework.EFLibrary.Entities
     {
         [Key]
         public int Id { get; set; }
-
-        [Required, MaxLength(20)]
         public string FirstName { get; set; } = String.Empty;
 
         [Required, MaxLength(20)]

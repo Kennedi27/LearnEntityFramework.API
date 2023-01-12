@@ -4,11 +4,16 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace LearnEntityFramework.EFLibrary.Configurations
 {
-    internal sealed class UserConfiguration : IEntityTypeConfiguration<UserEntity>
+    public sealed class UserConfiguration : IEntityTypeConfiguration<UserEntity>
     {
         public void Configure(EntityTypeBuilder<UserEntity> builder)
         {
             builder.HasKey(x => x.Id);
+
+            builder.Property(user => user.FirstName)
+                   .HasColumnName("first_name")
+                   .HasMaxLength(50)
+                   .IsRequired();
         }
     }
 }

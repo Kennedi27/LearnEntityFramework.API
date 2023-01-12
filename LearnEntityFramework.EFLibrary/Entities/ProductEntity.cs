@@ -12,5 +12,9 @@ namespace LearnEntityFramework.EFLibrary.Entities
         public string Code { get; set; } = String.Empty;
         [Required, MaxLength(50)]
         public string Name { get; set; } = String.Empty;
+        public int UnitId { get; set; }
+        public double Stock { get; set; }
+        public decimal Price { get; set; }
+        public int UserId { get; set; }
     }
 }

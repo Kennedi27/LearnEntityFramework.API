@@ -4,7 +4,6 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LearnEntityFramework.EFLibrary.Entities
 {
-    [Table("customer")]
     public class CustomerEntity : ISoftDeleteEntity, IAuditableEntity
     {
         [Required]

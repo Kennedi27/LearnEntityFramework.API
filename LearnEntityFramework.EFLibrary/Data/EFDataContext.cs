@@ -1,5 +1,6 @@
 ﻿using LearnEntityFramework.EFLibrary.Entities;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection;
 
 namespace LearnEntityFramework.EFLibrary.Data
 {
@@ -10,7 +11,17 @@ namespace LearnEntityFramework.EFLibrary.Data
 
         }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+
+
+            base.OnModelCreating(modelBuilder);
+        }
+
         public DbSet<CustomerEntity> Customers { get; set; }
         public DbSet<ProductUnitEntity> ProductUnit { get; set; }
+        public DbSet<UserEntity> Users { get; set; }
+
     }
 }

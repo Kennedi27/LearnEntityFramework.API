@@ -9,6 +9,8 @@ namespace LearnEntityFramework.EFLibrary.Configurations
         public void Configure(EntityTypeBuilder<ProductEntity> builder)
         {
             builder.HasKey(x => x.Id);
+
+
         }
     }
 }

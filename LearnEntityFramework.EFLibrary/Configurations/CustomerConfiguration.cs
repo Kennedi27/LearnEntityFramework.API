@@ -15,8 +15,6 @@ namespace LearnEntityFramework.EFLibrary.Configurations
 
             builder.Property(customer => customer.Deleted).HasDefaultValue(false);
 
-
-
             builder.HasQueryFilter(customer => !customer.Deleted);
 
         }
