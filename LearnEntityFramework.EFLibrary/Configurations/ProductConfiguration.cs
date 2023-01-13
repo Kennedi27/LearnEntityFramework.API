@@ -10,7 +10,7 @@ namespace LearnEntityFramework.EFLibrary.Configurations
         {
             builder.HasKey(x => x.Id);
 
-
+            builder.HasOne<ProductUnitEntity>().WithMany().HasForeignKey(@product => @product.UnitId).IsRequired();
         }
     }
 }
