@@ -11,9 +11,10 @@ namespace LearnEntityFramework.EFLibrary.Configurations
             builder.HasKey(x => x.Id);
 
             builder.Property(user => user.FirstName)
-                   .HasColumnName("first_name")
                    .HasMaxLength(50)
                    .IsRequired();
+
+            builder.Property(user => user.Active).HasDefaultValue(true);
         }
     }
 }

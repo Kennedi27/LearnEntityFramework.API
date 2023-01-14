@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace LearnEntityFramework.EFLibrary.Entities
 {
     [Table("user")]
-    public class UserEntity : IAuditableEntity, ISoftDeleteEntity
+    public class UserEntity : ISoftDeleteEntity
     {
         [Key]
         public int Id { get; set; }
@@ -17,16 +17,12 @@ namespace LearnEntityFramework.EFLibrary.Entities
         [Required, MaxLength(20)]
         public string LastName { get; set; } = String.Empty;
 
+        public bool Active { get; set; }
+
         public bool Deleted { get;  set; }
         
         public DateTime? DeleteTimeUtc { get; set; }
-        
-        public string CreatedBy { get; set; } = String.Empty;
-        
-        public DateTime CreatedOnUtc { get; set; }
-        
-        public string? ModifiedBy { get; set; }
-        
-        public DateTime? ModifiedOnUtc { get; set; }
+        public DateTime? LastLogin { get; set; }
+
     }
 }
