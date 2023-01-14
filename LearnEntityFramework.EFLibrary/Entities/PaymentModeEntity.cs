@@ -10,7 +10,7 @@ namespace LearnEntityFramework.EFLibrary.Entities
         public string Name { get; set; } = string.Empty;
 
         [Required]
-        public bool Active { get; set; };
+        public bool Active { get; set; }
 
         [Required]
         public int ViewShort { get; set; }
