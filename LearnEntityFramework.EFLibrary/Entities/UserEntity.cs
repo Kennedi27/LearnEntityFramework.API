@@ -4,10 +4,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LearnEntityFramework.EFLibrary.Entities
 {
-    [Table("user")]
     public class UserEntity : ISoftDeleteEntity
     {
-        [Key]
         public int Id { get; set; }
         public string FirstName { get; set; } = String.Empty;
 

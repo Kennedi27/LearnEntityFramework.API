@@ -17,7 +17,7 @@ namespace LearnEntityFramework.EFLibrary.Entities
         public decimal Qty { get; set; }
         public decimal UnitPrice { get; set; }
         public decimal SubTotal { get; set; }
-        public string CreatedBy { get; set; } = string.Empty;
+        public int CreatedBy { get; set; }
         public DateTime CreatedOnUtc { get; set; }
         public string? ModifiedBy { get; set; }
         public DateTime? ModifiedOnUtc { get; set; }

@@ -17,7 +17,7 @@ namespace LearnEntityFramework.EFLibrary.Entities
         [MaxLength(200)]
         public string? Address { get; set; }
 
-        public string CreatedBy { get; set; } = String.Empty;
+        public int CreatedBy { get; set; }
 
         public DateTime CreatedOnUtc { get; set; }
 

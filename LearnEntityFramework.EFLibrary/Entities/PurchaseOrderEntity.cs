@@ -20,7 +20,7 @@ namespace LearnEntityFramework.EFLibrary.Entities
         public int SupplierId { get; set; }
         public int UserId { get; set; }
 
-        public string CreatedBy { get; set; } = string.Empty;
+        public int CreatedBy { get; set; }
         public DateTime CreatedOnUtc { get; set; }
         public string? ModifiedBy { get; set; }
         public DateTime? ModifiedOnUtc { get; set; }

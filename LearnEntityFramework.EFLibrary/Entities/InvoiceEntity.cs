@@ -19,7 +19,7 @@ namespace LearnEntityFramework.EFLibrary.Entities
         [Range(1, 100)]
         public decimal Discount { get; set; }
 
-        public string CreatedBy { get; set; } = string.Empty;
+        public int CreatedBy { get; set; }
         public DateTime CreatedOnUtc { get; set; }
         public string? ModifiedBy { get; set; }
         public DateTime? ModifiedOnUtc { get; set; }
