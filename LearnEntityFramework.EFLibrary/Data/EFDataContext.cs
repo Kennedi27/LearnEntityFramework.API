@@ -19,7 +19,6 @@ namespace LearnEntityFramework.EFLibrary.Data
             base.OnModelCreating(modelBuilder);
         }
 
-        public DbSet<CustomerEntity> Customers { get; set; }
         public DbSet<InvoiceEntity> Invoices { get; set; }
         public DbSet<PaymentModeEntity> PaymentModes { get; set; }
         public DbSet<ProductEntity> Products { get; set; } 

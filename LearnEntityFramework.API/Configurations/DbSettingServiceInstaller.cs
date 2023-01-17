@@ -1,4 +1,5 @@
-﻿using LearnEntityFramework.EFLibrary.Data;
+﻿using LearnEntityFramework.API.Repositories.Authentication;
+using LearnEntityFramework.EFLibrary.Data;
 using Microsoft.EntityFrameworkCore;
 
 namespace LearnEntityFramework.API.Configurations
@@ -13,6 +14,8 @@ namespace LearnEntityFramework.API.Configurations
                 option.UseSqlServer(defaultConnection,
                     opts => opts.MigrationsAssembly("LearnEntityFramework.EFLibrary"));
             });
+
+            services.AddTransient<UserRoleRepository>();
 
         }
     }
