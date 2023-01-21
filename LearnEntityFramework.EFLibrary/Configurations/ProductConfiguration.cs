@@ -13,12 +13,14 @@ namespace LearnEntityFramework.EFLibrary.Configurations
             builder.HasOne<ProductUnitEntity>()
                    .WithMany()
                    .HasForeignKey(@product => @product.UnitId)
-                   .IsRequired();
+                   .IsRequired()
+                   .OnDelete(DeleteBehavior.NoAction);
 
             builder.HasOne<UserEntity>()
                    .WithMany()
                    .HasForeignKey(user => user.UserId)
-                   .IsRequired();
+                   .IsRequired()
+                   .OnDelete(DeleteBehavior.NoAction);
 
         }
     }

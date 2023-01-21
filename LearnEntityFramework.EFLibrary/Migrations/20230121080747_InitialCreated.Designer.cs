@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LearnEntityFramework.EFLibrary.Migrations
 {
     [DbContext(typeof(EFDataContext))]
-    [Migration("20230115043653_InitialCreated")]
+    [Migration("20230121080747_InitialCreated")]
     partial class InitialCreated
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -51,7 +51,7 @@ namespace LearnEntityFramework.EFLibrary.Migrations
                     b.Property<DateTime>("CreatedOnUtc")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2023, 1, 15, 4, 36, 51, 871, DateTimeKind.Utc).AddTicks(6515));
+                        .HasDefaultValue(new DateTime(2023, 1, 21, 8, 7, 45, 908, DateTimeKind.Utc).AddTicks(6981));
 
                     b.Property<DateTime?>("DeleteTimeUtc")
                         .HasColumnType("datetime2");
@@ -93,7 +93,7 @@ namespace LearnEntityFramework.EFLibrary.Migrations
                     b.Property<DateTime>("CreatedOnUtc")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2023, 1, 15, 4, 36, 51, 872, DateTimeKind.Utc).AddTicks(877));
+                        .HasDefaultValue(new DateTime(2023, 1, 21, 8, 7, 45, 909, DateTimeKind.Utc).AddTicks(8528));
 
                     b.Property<int?>("CustomerId")
                         .IsRequired()
@@ -245,7 +245,9 @@ namespace LearnEntityFramework.EFLibrary.Migrations
                         .HasColumnType("int");
 
                     b.Property<DateTime>("CreatedOnUtc")
-                        .HasColumnType("datetime2");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValue(new DateTime(2023, 1, 21, 8, 7, 45, 913, DateTimeKind.Utc).AddTicks(543));
 
                     b.Property<string>("ModifiedBy")
                         .HasColumnType("nvarchar(max)");
@@ -268,12 +270,11 @@ namespace LearnEntityFramework.EFLibrary.Migrations
                     b.Property<decimal>("UnitPrice")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
-                    b.ToTable("purchase_order");
+                    b.HasIndex("CreatedBy");
+
+                    b.ToTable("purchase_order", (string)null);
                 });
 
             modelBuilder.Entity("LearnEntityFramework.EFLibrary.Entities.ReceiveProductEntity", b =>
@@ -288,13 +289,17 @@ namespace LearnEntityFramework.EFLibrary.Migrations
                         .HasColumnType("int");
 
                     b.Property<DateTime>("CreatedOnUtc")
-                        .HasColumnType("datetime2");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValue(new DateTime(2023, 1, 21, 8, 7, 45, 915, DateTimeKind.Utc).AddTicks(5665));
 
                     b.Property<DateTime?>("DeleteTimeUtc")
                         .HasColumnType("datetime2");
 
                     b.Property<bool>("Deleted")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
 
                     b.Property<string>("ModifiedBy")
                         .HasColumnType("nvarchar(max)");
@@ -319,47 +324,13 @@ namespace LearnEntityFramework.EFLibrary.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("receive_product");
-                });
+                    b.HasIndex("CreatedBy");
 
-            modelBuilder.Entity("LearnEntityFramework.EFLibrary.Entities.SalesEntity", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                    b.HasIndex("ProductId");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    b.HasIndex("SupplierId");
 
-                    b.Property<int>("CreatedBy")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("CreatedOnUtc")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("InvoiceId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("ModifiedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("ModifiedOnUtc")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("ProductId")
-                        .HasColumnType("int");
-
-                    b.Property<decimal>("Qty")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<decimal>("SubTotal")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<decimal>("UnitPrice")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("sales");
+                    b.ToTable("receive_product", (string)null);
                 });
 
             modelBuilder.Entity("LearnEntityFramework.EFLibrary.Entities.SupplierEntity", b =>
@@ -389,13 +360,17 @@ namespace LearnEntityFramework.EFLibrary.Migrations
                         .HasColumnType("int");
 
                     b.Property<DateTime>("CreatedOnUtc")
-                        .HasColumnType("datetime2");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValue(new DateTime(2023, 1, 21, 8, 7, 45, 915, DateTimeKind.Utc).AddTicks(8885));
 
                     b.Property<DateTime?>("DeleteTimeUtc")
                         .HasColumnType("datetime2");
 
                     b.Property<bool>("Deleted")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -415,7 +390,9 @@ namespace LearnEntityFramework.EFLibrary.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("supplier");
+                    b.HasIndex("CreatedBy");
+
+                    b.ToTable("supplier", (string)null);
                 });
 
             modelBuilder.Entity("LearnEntityFramework.EFLibrary.Entities.UserEntity", b =>
@@ -457,7 +434,7 @@ namespace LearnEntityFramework.EFLibrary.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Users");
+                    b.ToTable("users", (string)null);
                 });
 
             modelBuilder.Entity("LearnEntityFramework.EFLibrary.Entities.UserLoginEntity", b =>
@@ -498,7 +475,7 @@ namespace LearnEntityFramework.EFLibrary.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("user_role");
+                    b.ToTable("user_role", (string)null);
                 });
 
             modelBuilder.Entity("LearnEntityFramework.EFLibrary.Entities.CustomerEntity", b =>
@@ -506,7 +483,7 @@ namespace LearnEntityFramework.EFLibrary.Migrations
                     b.HasOne("LearnEntityFramework.EFLibrary.Entities.UserEntity", null)
                         .WithMany()
                         .HasForeignKey("CreatedBy")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
                 });
 
@@ -515,7 +492,7 @@ namespace LearnEntityFramework.EFLibrary.Migrations
                     b.HasOne("LearnEntityFramework.EFLibrary.Entities.UserEntity", null)
                         .WithMany()
                         .HasForeignKey("CreatedBy")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
                 });
 
@@ -524,13 +501,52 @@ namespace LearnEntityFramework.EFLibrary.Migrations
                     b.HasOne("LearnEntityFramework.EFLibrary.Entities.ProductUnitEntity", null)
                         .WithMany()
                         .HasForeignKey("UnitId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.HasOne("LearnEntityFramework.EFLibrary.Entities.UserEntity", null)
                         .WithMany()
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("LearnEntityFramework.EFLibrary.Entities.PurchaseOrderEntity", b =>
+                {
+                    b.HasOne("LearnEntityFramework.EFLibrary.Entities.UserEntity", null)
+                        .WithMany()
+                        .HasForeignKey("CreatedBy")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("LearnEntityFramework.EFLibrary.Entities.ReceiveProductEntity", b =>
+                {
+                    b.HasOne("LearnEntityFramework.EFLibrary.Entities.UserEntity", null)
+                        .WithMany()
+                        .HasForeignKey("CreatedBy")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.HasOne("LearnEntityFramework.EFLibrary.Entities.ProductEntity", null)
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.HasOne("LearnEntityFramework.EFLibrary.Entities.SupplierEntity", null)
+                        .WithMany()
+                        .HasForeignKey("SupplierId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("LearnEntityFramework.EFLibrary.Entities.SupplierEntity", b =>
+                {
+                    b.HasOne("LearnEntityFramework.EFLibrary.Entities.UserEntity", null)
+                        .WithMany()
+                        .HasForeignKey("CreatedBy")
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
                 });
 #pragma warning restore 612, 618

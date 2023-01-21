@@ -16,32 +16,14 @@ namespace LearnEntityFramework.API.Repositories.Authentication
             this._context = context;
         }
 
-
-        #region ============================================= START IMPLEMENTATION BASE REPOSITORY =================================================
-
-        public async Task<bool> CreateAsync(UserRoleEntity roleUser)
+        public Task<bool> CreateAsync(UserRoleEntity entity)
         {
-
-            if(roleUser is null)
-                return false;
-
-
-            await _context.AddAsync(roleUser);
-            await _context.SaveChangesAsync();
-
-            return true;
-
+            throw new NotImplementedException();
         }
 
-        public async Task<bool> DeleteAsync(UserRoleEntity entity)
+        public Task<bool> DeleteAsync(UserRoleEntity entity)
         {
-            if (entity is null)
-                return false;
-
-            _context.Remove<UserRoleEntity>(entity);
-            await _context.SaveChangesAsync();
-
-            return true;
+            throw new NotImplementedException();
         }
 
         public Task<List<UserRoleEntity>> GetActiveAsync()
@@ -49,17 +31,14 @@ namespace LearnEntityFramework.API.Repositories.Authentication
             throw new NotImplementedException();
         }
 
-        public async Task<List<UserRoleEntity>> GetAllAsync()
+        public Task<List<UserRoleEntity>> GetAllAsync()
         {
-            var result = from a in _context.UserRoles
-                         select a;
-
-            return await result.ToListAsync();
+            throw new NotImplementedException();
         }
 
-        public async Task<UserRoleEntity?> GetByIdAsync(int key)
+        public Task<UserRoleEntity?> GetByIdAsync(int key)
         {
-            return await _context.UserRoles.Where(p => p.Id == key).SingleOrDefaultAsync();
+            throw new NotImplementedException();
         }
 
         public Task<List<UserRoleEntity>> GetInActiveAsync()
@@ -72,16 +51,15 @@ namespace LearnEntityFramework.API.Repositories.Authentication
             throw new NotImplementedException();
         }
 
-        public async Task<bool> UpdateAsync(UserRoleEntity entity)
+        public Task<bool> UpdateAsync(UserRoleEntity entity)
         {
-            if (entity is null)
-                return false;
-
-            _context.Update<UserRoleEntity>(entity);
-            await _context.SaveChangesAsync();
-
-            return true;
+            throw new NotImplementedException();
         }
+
+
+        #region ============================================= START IMPLEMENTATION BASE REPOSITORY =================================================
+
+
 
         #endregion ============================================= END IMPLEMENTATION BASE REPOSITORY =================================================
     }

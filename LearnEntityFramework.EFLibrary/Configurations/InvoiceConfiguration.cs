@@ -15,7 +15,9 @@ namespace LearnEntityFramework.EFLibrary.Configurations
             builder.HasOne<UserEntity>()
                    .WithMany()
                    .HasForeignKey(invoice => invoice.CreatedBy)
-                   .IsRequired();
+                   .IsRequired()
+                   .OnDelete(DeleteBehavior.NoAction);
+
 
             builder.Property(invoice => invoice.TotalAmount).HasDefaultValue(0);
 

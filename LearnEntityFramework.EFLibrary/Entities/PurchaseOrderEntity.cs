@@ -18,7 +18,6 @@ namespace LearnEntityFramework.EFLibrary.Entities
         public decimal UnitPrice { get; set; }
         public decimal SubTotal { get; set; }
         public int SupplierId { get; set; }
-        public int UserId { get; set; }
 
         public int CreatedBy { get; set; }
         public DateTime CreatedOnUtc { get; set; }

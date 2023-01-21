@@ -14,7 +14,9 @@ namespace LearnEntityFramework.EFLibrary.Configurations
 
             builder.HasOne<UserEntity>().WithMany()
                    .HasForeignKey(customer => customer.CreatedBy)
-                   .IsRequired();
+                   .IsRequired()
+                   .OnDelete(DeleteBehavior.NoAction);
+
 
             builder.Property(customer => customer.CreatedOnUtc).HasDefaultValue(DateTime.UtcNow);
 

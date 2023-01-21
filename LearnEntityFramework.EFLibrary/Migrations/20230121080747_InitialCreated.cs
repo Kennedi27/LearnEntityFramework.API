@@ -51,95 +51,6 @@ namespace LearnEntityFramework.EFLibrary.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "purchase_order",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    ProductId = table.Column<int>(type: "int", nullable: false),
-                    Qty = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    UnitPrice = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    SubTotal = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    SupplierId = table.Column<int>(type: "int", nullable: false),
-                    UserId = table.Column<int>(type: "int", nullable: false),
-                    CreatedBy = table.Column<int>(type: "int", nullable: false),
-                    CreatedOnUtc = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    ModifiedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ModifiedOnUtc = table.Column<DateTime>(type: "datetime2", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_purchase_order", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "receive_product",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    ProductId = table.Column<int>(type: "int", nullable: false),
-                    Qty = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    UnitPrice = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    SubTotal = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    SupplierId = table.Column<int>(type: "int", nullable: false),
-                    Deleted = table.Column<bool>(type: "bit", nullable: false),
-                    DeleteTimeUtc = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    CreatedBy = table.Column<int>(type: "int", nullable: false),
-                    CreatedOnUtc = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    ModifiedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ModifiedOnUtc = table.Column<DateTime>(type: "datetime2", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_receive_product", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "sales",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    InvoiceId = table.Column<int>(type: "int", nullable: false),
-                    ProductId = table.Column<int>(type: "int", nullable: false),
-                    Qty = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    UnitPrice = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    SubTotal = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    CreatedBy = table.Column<int>(type: "int", nullable: false),
-                    CreatedOnUtc = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    ModifiedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ModifiedOnUtc = table.Column<DateTime>(type: "datetime2", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_sales", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "supplier",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Code = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    Contact = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: false),
-                    Address = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
-                    Email = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    Deleted = table.Column<bool>(type: "bit", nullable: false),
-                    DeleteTimeUtc = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    CreatedBy = table.Column<int>(type: "int", nullable: false),
-                    CreatedOnUtc = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    ModifiedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ModifiedOnUtc = table.Column<DateTime>(type: "datetime2", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_supplier", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "user_login",
                 columns: table => new
                 {
@@ -168,7 +79,7 @@ namespace LearnEntityFramework.EFLibrary.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Users",
+                name: "users",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -183,7 +94,7 @@ namespace LearnEntityFramework.EFLibrary.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Users", x => x.Id);
+                    table.PrimaryKey("PK_users", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -197,7 +108,7 @@ namespace LearnEntityFramework.EFLibrary.Migrations
                     Contact = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: true),
                     Address = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: true),
                     CreatedBy = table.Column<int>(type: "int", nullable: false),
-                    CreatedOnUtc = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2023, 1, 15, 4, 36, 51, 871, DateTimeKind.Utc).AddTicks(6515)),
+                    CreatedOnUtc = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2023, 1, 21, 8, 7, 45, 908, DateTimeKind.Utc).AddTicks(6981)),
                     ModifiedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ModifiedOnUtc = table.Column<DateTime>(type: "datetime2", nullable: true),
                     Deleted = table.Column<bool>(type: "bit", nullable: false, defaultValue: false),
@@ -207,11 +118,10 @@ namespace LearnEntityFramework.EFLibrary.Migrations
                 {
                     table.PrimaryKey("PK_customer", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_customer_Users_CreatedBy",
+                        name: "FK_customer_users_CreatedBy",
                         column: x => x.CreatedBy,
-                        principalTable: "Users",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalTable: "users",
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -225,7 +135,7 @@ namespace LearnEntityFramework.EFLibrary.Migrations
                     TotalAmount = table.Column<decimal>(type: "decimal(18,2)", nullable: false, defaultValue: 0m),
                     Discount = table.Column<decimal>(type: "decimal(18,2)", nullable: false, defaultValue: 0m),
                     CreatedBy = table.Column<int>(type: "int", nullable: false),
-                    CreatedOnUtc = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2023, 1, 15, 4, 36, 51, 872, DateTimeKind.Utc).AddTicks(877)),
+                    CreatedOnUtc = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2023, 1, 21, 8, 7, 45, 909, DateTimeKind.Utc).AddTicks(8528)),
                     ModifiedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ModifiedOnUtc = table.Column<DateTime>(type: "datetime2", nullable: true),
                     Deleted = table.Column<bool>(type: "bit", nullable: false, defaultValue: false),
@@ -235,11 +145,10 @@ namespace LearnEntityFramework.EFLibrary.Migrations
                 {
                     table.PrimaryKey("PK_invoice", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_invoice_Users_CreatedBy",
+                        name: "FK_invoice_users_CreatedBy",
                         column: x => x.CreatedBy,
-                        principalTable: "Users",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalTable: "users",
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -262,14 +171,104 @@ namespace LearnEntityFramework.EFLibrary.Migrations
                         name: "FK_product_productunitentity_UnitId",
                         column: x => x.UnitId,
                         principalTable: "productunitentity",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                     table.ForeignKey(
-                        name: "FK_product_Users_UserId",
+                        name: "FK_product_users_UserId",
                         column: x => x.UserId,
-                        principalTable: "Users",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalTable: "users",
+                        principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "purchase_order",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    ProductId = table.Column<int>(type: "int", nullable: false),
+                    Qty = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    UnitPrice = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    SubTotal = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    SupplierId = table.Column<int>(type: "int", nullable: false),
+                    CreatedBy = table.Column<int>(type: "int", nullable: false),
+                    CreatedOnUtc = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2023, 1, 21, 8, 7, 45, 913, DateTimeKind.Utc).AddTicks(543)),
+                    ModifiedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ModifiedOnUtc = table.Column<DateTime>(type: "datetime2", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_purchase_order", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_purchase_order_users_CreatedBy",
+                        column: x => x.CreatedBy,
+                        principalTable: "users",
+                        principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "supplier",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Code = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    Contact = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: false),
+                    Address = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    Deleted = table.Column<bool>(type: "bit", nullable: false, defaultValue: false),
+                    DeleteTimeUtc = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    CreatedBy = table.Column<int>(type: "int", nullable: false),
+                    CreatedOnUtc = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2023, 1, 21, 8, 7, 45, 915, DateTimeKind.Utc).AddTicks(8885)),
+                    ModifiedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ModifiedOnUtc = table.Column<DateTime>(type: "datetime2", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_supplier", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_supplier_users_CreatedBy",
+                        column: x => x.CreatedBy,
+                        principalTable: "users",
+                        principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "receive_product",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    ProductId = table.Column<int>(type: "int", nullable: false),
+                    Qty = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    UnitPrice = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    SubTotal = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    SupplierId = table.Column<int>(type: "int", nullable: false),
+                    Deleted = table.Column<bool>(type: "bit", nullable: false, defaultValue: false),
+                    DeleteTimeUtc = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    CreatedBy = table.Column<int>(type: "int", nullable: false),
+                    CreatedOnUtc = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2023, 1, 21, 8, 7, 45, 915, DateTimeKind.Utc).AddTicks(5665)),
+                    ModifiedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ModifiedOnUtc = table.Column<DateTime>(type: "datetime2", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_receive_product", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_receive_product_product_ProductId",
+                        column: x => x.ProductId,
+                        principalTable: "product",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_receive_product_supplier_SupplierId",
+                        column: x => x.SupplierId,
+                        principalTable: "supplier",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_receive_product_users_CreatedBy",
+                        column: x => x.CreatedBy,
+                        principalTable: "users",
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateIndex(
@@ -291,6 +290,31 @@ namespace LearnEntityFramework.EFLibrary.Migrations
                 name: "IX_product_UserId",
                 table: "product",
                 column: "UserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_purchase_order_CreatedBy",
+                table: "purchase_order",
+                column: "CreatedBy");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_receive_product_CreatedBy",
+                table: "receive_product",
+                column: "CreatedBy");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_receive_product_ProductId",
+                table: "receive_product",
+                column: "ProductId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_receive_product_SupplierId",
+                table: "receive_product",
+                column: "SupplierId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_supplier_CreatedBy",
+                table: "supplier",
+                column: "CreatedBy");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -305,9 +329,6 @@ namespace LearnEntityFramework.EFLibrary.Migrations
                 name: "payment_mode");
 
             migrationBuilder.DropTable(
-                name: "product");
-
-            migrationBuilder.DropTable(
                 name: "productcategoryentity");
 
             migrationBuilder.DropTable(
@@ -317,22 +338,22 @@ namespace LearnEntityFramework.EFLibrary.Migrations
                 name: "receive_product");
 
             migrationBuilder.DropTable(
-                name: "sales");
-
-            migrationBuilder.DropTable(
-                name: "supplier");
-
-            migrationBuilder.DropTable(
                 name: "user_login");
 
             migrationBuilder.DropTable(
                 name: "user_role");
 
             migrationBuilder.DropTable(
+                name: "product");
+
+            migrationBuilder.DropTable(
+                name: "supplier");
+
+            migrationBuilder.DropTable(
                 name: "productunitentity");
 
             migrationBuilder.DropTable(
-                name: "Users");
+                name: "users");
         }
     }
 }
